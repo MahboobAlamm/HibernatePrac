@@ -16,8 +16,8 @@ public class Laptop {
     @Transient
     private String lYear;
 
-    @ManyToOne
-    private Student students;
+    @ManyToMany(mappedBy = "laptop")
+    private List<Student> students;
 
     public Laptop() {
     }
@@ -28,11 +28,11 @@ public class Laptop {
         this.lmodel = lmodel;
     }
 
-    public Student getStudents() {
+    public List<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(Student students) {
+    public void setStudents(List<Student> students) {
         this.students = students;
     }
 

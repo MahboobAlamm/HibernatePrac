@@ -39,11 +39,11 @@ public class Main {
         st2.setsName("Parwez");
         st2.setAge(16);
 
-        st1.setLaptop(List.of(lp1,lp2));
-        st2.setLaptop(List.of(lp3));
-        lp1.setStudents(st1);
-        lp2.setStudents(st1);
-        lp3.setStudents(st2);
+        st1.setLaptop(List.of(lp1, lp2));
+        st2.setLaptop(List.of(lp3, lp2, lp1));
+        lp1.setStudents(List.of(st1, st2));
+        lp2.setStudents(List.of(st1, st2));
+        lp3.setStudents(List.of(st2));
 
 
         Configuration cfg = new Configuration();
@@ -62,7 +62,6 @@ public class Main {
 
 //        Student st1 = session.find(Student.class, 5); //to get the values using primary key
 //        System.out.println(st1.getAge());                //If no value found it will return null, and getting that age from null will throw exception, so handle it explicitly
-
 
 //          session.merge(st);                               //to upsert the value (Transaction needed)
 //          session.remove(st);                              // to remove the value

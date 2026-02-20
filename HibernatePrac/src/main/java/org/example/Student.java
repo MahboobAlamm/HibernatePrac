@@ -1,9 +1,6 @@
 package org.example;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -15,7 +12,7 @@ public class Student {
     private String sName;
     private int age;
 
-    @OneToMany
+    @ManyToMany
     private List<Laptop> laptop;
 
     public Student() {
